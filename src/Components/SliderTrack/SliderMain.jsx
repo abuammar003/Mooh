@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react';
 import "./SliderMain.css";
 import MoohData from "../../response.json";
-import TextSlide from './TextSlide';
-import ImageSlide from './ImageSlide';
-import VideoSlide from './VideoSlide';
+import TextSlide from './TextSlide/TextSlide';
+import ImageSlide from './ImageSlide/ImageSlide';
+import VideoSlide from './VideoSlide/VideoSlide';
 
 
 function SliderMain() {
@@ -11,7 +11,7 @@ function SliderMain() {
     const Data = MoohData.data;
 
     const [adsData, setAdsData] = useState(Data);
-    console.log(MoohData.data)
+    // console.log(MoohData.data)
     // console.log(adsData[2].title)
 
     const [currentIndex, setCurrentIndex] = useState(0);  
@@ -41,31 +41,33 @@ function SliderMain() {
 
         <div className="slider-container" >
 
-            <div className="slider-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+            {/* <div className="slider-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
 
-                {adsData.map((item) => (
-                    <div className='slide' key={item.nid}>
+                {adsData.map((item) => ( */}
+                    {/* <div className='slide' key={currItem.nid}> */}
+
 
                             {/* Data Type === TEXT  */}
-                        {item.bundle === "news" && (
-                            <TextSlide item={item} />
+                        {currItem?.bundle === "news" && (
+                            <TextSlide item={currItem} />
                         )}
 
                             {/* Data Type === TEXT  */}
-                        {item.field_media?.type === "image" && (
-                            <ImageSlide item={item}/>
+                        {currItem.field_media?.type === "image" && (
+                            <ImageSlide item={currItem}/>
                         )}
 
                             {/* Data Type === TEXT  */}
-                        {item.field_media?.type === "video" && (
-                            <VideoSlide item={item}/>
+                        {currItem.field_media?.type === "video" && (
+                            <VideoSlide item={currItem}/>
                         )}
                     
                     
-                    </div>
-                ))}
+                    
+                    {/* </div> */}
+                {/* ))}
 
-            </div>
+            </div> */}
 
         </div>
     </section>

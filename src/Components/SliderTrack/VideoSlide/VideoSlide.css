@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* ================== VIDEO Slide ==================== */
+.video-slide {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.video-slide video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}

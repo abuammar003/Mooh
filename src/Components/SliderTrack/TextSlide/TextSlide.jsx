@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import MoohLogo from "../../assets/mooh_logo.png";
-import Breaking_News_Logo from "../../assets/Breaking_News_Img.png";
+import "./TextSlide.css";
+import MoohLogo from "../../../assets/mooh_logo.png";
+import Breaking_News_Logo from "../../../assets/Breaking_News_Img.png";
 
 
 function TextSlide({item}) {
@@ -48,8 +49,16 @@ function TextSlide({item}) {
 
             </div>
             
+            
        
-        <h1>{item.title}</h1>
+        {/* News Text */}
+            <div className="news-text">
+                <h1 key={item.nid}>
+                    {item.title}
+                </h1>
+            </div>
+
+
 
         {/* Breaking News */}
             <img
