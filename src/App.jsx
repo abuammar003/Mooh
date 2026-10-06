@@ -1,5 +1,6 @@
 
 import './App.css'
+import Editor from './Components/AdminPanel/Editor/Editor';
 import SliderMain from './Components/SliderTrack/SliderMain';
 
 function App() {
@@ -7,8 +8,10 @@ function App() {
 
   return (
     <div className='app'>
-      <SliderMain />
-    </div>
+      {/* <SliderMain /> */}
+
+      <Editor />
+    </div> 
   )
 }
 
